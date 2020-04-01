@@ -21,7 +21,7 @@ function App() {
                     <Route path='/recipe/:id' component={RecipesDetails} />
                     <Route path='/signin' component={SignIn} />
                     <Route path='/signup' component={SignUp} />
-                    <Route path='/recipes/add' component={AddRecipe} />
+                    <Route path='/add' component={AddRecipe} />
                 </Switch>
             </div>
         </Router>

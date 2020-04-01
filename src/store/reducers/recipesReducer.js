@@ -8,7 +8,16 @@ const initialState = {
 
 
 const recipeReducer = (state = initialState, action) => {
-    return state;
+    switch (action.type) {
+        case 'ADD_RECIPE':
+            console.log('created', action.recipe);
+            return state;
+        case 'ADD_RECIPE_ERROR':
+            console.log(action.error);
+            return state;
+        default:
+            return state;
+    }
 };
 
 export default recipeReducer;
