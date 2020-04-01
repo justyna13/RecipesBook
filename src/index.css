@@ -1,0 +1,24 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("/img/main-bg.jpg") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color: #ccc;
+    min-height: 100%;
+}
+
+
+form {
+    padding: 20px;
+    margin: 60px;
+}
+
+form button, form h5 {
+    margin: 20px 0;
+}
+
