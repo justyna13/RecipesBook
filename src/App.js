@@ -9,6 +9,7 @@ import RecipesDetails from "./components/recipes/RecipeDetails";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import AddRecipe from "./components/recipes/AddRecipe";
+import './styles/navbar.css';
 
 function App() {
     return (

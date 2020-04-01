@@ -5,10 +5,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: url("/img/main-bg.jpg") no-repeat;
     background-size: cover;
-    background-position: bottom;
-    background-color: #ccc;
+    background: #ccc url("/img/main-bg.jpg") no-repeat bottom;
     min-height: 100%;
 }
 
@@ -20,5 +18,13 @@ form {
 
 form button, form h5 {
     margin: 20px 0;
+}
+
+
+.card {
+    background-color: #fff;
+    padding: 5%;
+    margin: 5%;
+    min-height: 30vh;
 }
 
