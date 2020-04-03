@@ -31,34 +31,34 @@ class SignUp extends React.Component {
 
         if(auth.uid) return <Redirect to="/" />
         else return (
-            <div className="container">
+            <div className="card">
                 <form onSubmit={this.handleSubmit} className="white">
                     <h5 className="grey-text darken-3">
                         Sign Up
                     </h5>
-
+                    <br/>
                     <div className="input-field">
-                        <label htmlFor="firstName">First Name</label>
+                        <label htmlFor="firstName">First Name</label> <br/>
                         <input type="text" id="firstName" onChange={this.handleChange} />
                     </div>
 
                     <div className="input-field">
-                        <label htmlFor="lastName">Last Name</label>
+                        <label htmlFor="lastName">Last Name</label> <br/>
                         <input type="text" id="lastName" onChange={this.handleChange} />
                     </div>
 
                     <div className="input-field">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email">Email</label> <br/>
                         <input type="email" id="email" onChange={this.handleChange} />
                     </div>
 
                     <div className="input-field">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Password</label> <br/>
                         <input type="password" id="password" onChange={this.handleChange} />
                     </div>
 
-                    <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Sign up</button>
+                    <div className="input-field btn-submit col-md-6">
+                        <button className="btn btn-success">Sign up</button>
                     </div>
 
                     <div className="red-text center">

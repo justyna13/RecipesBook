@@ -12,10 +12,10 @@ const Navbar = (props) => {
     return (
         <nav>
             <div className="nav__inner">
-                <Link className="nav__title" to="/">Recipes Book</Link>
+                <Link className="nav__title" to="/">
+                    <i className="fa fa-fire"> Recipes Book</i></Link>
                 <div>
                     {links}
-
                 </div>
             </div>
         </nav>

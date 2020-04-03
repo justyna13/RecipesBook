@@ -9,14 +9,25 @@ class AddRecipe extends React.Component {
     state = {
         name: '',
         description: '',
-        ingredients: '',
+        ingredients: [{
+            name: '',
+            amount: 0
+        }],
         difficultyLevel: 0
     };
 
     handleChange = (e) => {
-        this.setState({
-            [e.target.id]: e.target.value
-        })
+
+        if (['name', 'amount'].includes(e.target.className)) {
+            console.log('yes', e.target.value);
+            let ingredients = [...this.state.ingredients];
+            ingredients[e.target.dataset.id][e.target.className] = e.target.value;
+            this.setState({ingredients}, () => console.log(this.state.ingredients));
+        } else {
+            this.setState({
+                [e.target.id]: e.target.value
+            })
+        }
     };
 
     handleSubmit = (e) => {
@@ -25,9 +36,17 @@ class AddRecipe extends React.Component {
         this.props.history.push('/');
     };
 
+    addIngredient = (e) => {
+        e.preventDefault();
+        this.setState((prevState) => ({
+            ingredients: [...prevState.ingredients, {name: '', amount: 0}],
+        }));
+    };
+
     render() {
 
         const { auth } = this.props;
+        let { ingredients } = this.state;
 
         if (!auth.uid) return <Redirect to="/signin" />
         else {
@@ -52,11 +71,36 @@ class AddRecipe extends React.Component {
                         </div>
 
                         <div className="input-field">
-                            <label htmlFor="ingredient">Ingredients</label> <br/> <br/>
-                            <input
-                                type="text"
-                                id="ingredients"
-                                onChange={this.handleChange}/>
+                            <h5>Ingredients</h5> <br/> <br/>
+                            {
+                                ingredients.map( (val, idx) => {
+                                    let ingredId = `ingredient-${idx}`, amountId = `amount-${idx}`;
+                                    return (
+                                        <div key={idx}>
+                                            <label htmlFor={ingredId}>{`Ingredient #${idx + 1}`}</label> <br/>
+                                            <input
+                                                type="text"
+                                                name={ingredId}
+                                                data-id={idx}
+                                                id={ingredId}
+                                                className="name"
+                                                onChange={this.handleChange}
+                                            />
+                                            <br/>
+                                            <label htmlFor={amountId}>Amount</label> <br/>
+                                            <input
+                                                type="number"
+                                                data-id={idx}
+                                                name={amountId}
+                                                id={amountId}
+                                                className="amount"
+                                                onChange={this.handleChange}
+                                            />
+                                        </div>
+                                    )
+                                })
+                            }
+                            <button onClick={this.addIngredient}>Add new </button>
                         </div>
 
                         <div className="input-field">

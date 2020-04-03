@@ -28,25 +28,25 @@ class SignIn extends React.Component {
         if(auth.uid) return <Redirect to="/" />
         else return (
             <div className="card">
-                <form onSubmit={this.handleSubmit} className="white">
+                <form onSubmit={this.handleSubmit}>
                     <h5 className="grey-text darken-3">
-                        Sign In
+                        Login
                     </h5>
-
-                    <div className="input-field">
-                        <label htmlFor="email">Email</label>
+                    <br/>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="email">Email</label> <br/>
                         <input type="email" id="email" onChange={this.handleChange} />
                     </div>
 
-                    <div className="input-field">
-                        <label htmlFor="password">Password</label>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="password">Password</label> <br/>
                         <input type="password" id="password" onChange={this.handleChange} />
                     </div>
 
-                    <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Login</button>
+                    <div className="input-field btn-submit col-md-6">
+                        <button className="btn btn-success">Login</button>
                     </div>
-                    <div className="red-text center">
+                    <div className="red-text">
                         { authError ? <p>{authError}</p>: null }
                     </div>
 

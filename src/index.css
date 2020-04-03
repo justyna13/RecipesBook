@@ -3,28 +3,46 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background: #ccc url("/img/main-bg.jpg") no-repeat bottom;
-    min-height: 100%;
+    /*background-image: url("/img/main-bg.jpg");*/
+    /*min-height: 100vh;*/
+    /*min-width: 100vw;*/
+    /*overflow: hidden;*/
+    /*background-size: cover;*/
+    /*background-position: top right;*/
+    background-color: #F46036;
+    overflow-y: auto;
 }
 
 
-form {
-    padding: 20px;
-    margin: 60px;
-}
-
-form button, form h5 {
-    margin: 20px 0;
-}
 
 
 .card {
     background-color: #fff;
-    padding: 5%;
+    padding: 30px;
     margin: 5%;
     min-height: 30vh;
+    box-shadow: 2px 2px 1px 1px grey;
 }
 
+.grey-text {
+    color: #686868;
+}
+
+.grey-text h5{
+    font-weight: bold;
+}
+
+input[type=email] ,
+input[type=password],
+input[type=text] {
+    border-radius: 5%;
+    padding: 1%;
+}
+
+.btn-submit {
+    float: right;
+}
+
+label {
+    padding-top: 1%;
+}

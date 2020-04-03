@@ -5,7 +5,6 @@ import {
     Switch } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/dashboard/Dashboard";
-import RecipesDetails from "./components/recipes/RecipeDetails";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import AddRecipe from "./components/recipes/AddRecipe";
@@ -17,8 +16,7 @@ function App() {
             <div>
                 <Navbar />
                 <Switch>
-                    <Route exact path='/' component={Dashboard} />
-                    <Route path='/recipe/:id' component={RecipesDetails} />
+                    <Route exact path={['/', '/recipe/:id']} component={Dashboard} />
                     <Route path='/signin' component={SignIn} />
                     <Route path='/signup' component={SignUp} />
                     <Route path='/add' component={AddRecipe} />
