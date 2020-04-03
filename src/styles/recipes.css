@@ -75,6 +75,8 @@
     font-family: Lato, sans-serif;
     font-weight: bold;
     font-size: 2rem;
+    display: inline-flex;
+    grid-column-gap: 20px;
 }
 .recipes__list--details {
     background-color: #481D24;
