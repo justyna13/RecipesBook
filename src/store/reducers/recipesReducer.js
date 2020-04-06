@@ -15,6 +15,18 @@ const recipeReducer = (state = initialState, action) => {
         case 'ADD_RECIPE_ERROR':
             console.log(action.error);
             return state;
+        case 'UPDATE_RECIPE':
+            console.log('created', action.recipe);
+            return state;
+        case 'UPDATE_RECIPE_ERROR':
+            console.log(action.error);
+            return state;
+        case 'DELETE_RECIPE':
+            console.log('deleted');
+            return state;
+        case 'DELETE_RECIPE_ERROR':
+            console.log(action.error);
+            return state;
         default:
             return state;
     }

@@ -14,7 +14,7 @@ class AddRecipe extends React.Component {
             name: '',
             amount: 0
         }],
-        difficultyLevel: 0
+        difficultyLevel: 1
     };
 
     handleChange(field, e) {
@@ -53,6 +53,7 @@ class AddRecipe extends React.Component {
                 <div className="card">
                     <RecipeForm
                         title="Add new recipe"
+                        recipe={this.state}
                         handleChange={this.handleChange.bind(this)}
                         handleSubmit={this.handleSubmit.bind(this)}
                         addIngredient={this.addIngredient.bind(this)}

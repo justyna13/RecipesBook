@@ -1,13 +1,18 @@
 import React, {useState} from "react";
 import moment from "moment";
 import Modal from 'react-bootstrap/Modal';
+import EditRecipe from "./EditRecipe";
+import {deleteRecipe} from "../../store/actions/recipesActions";
+import {connect} from "react-redux";
 
-const RecipeSummary = ({recipe}) => {
+
+const RecipeSummary = ({recipe, deleteRecipeDispatch}) => {
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
 
     if (recipe.createdAt) {
         return (
@@ -15,8 +20,13 @@ const RecipeSummary = ({recipe}) => {
 
                 <div className="recipe__title recipe__summary--title">
                     <h4 className="m-auto">{recipe.name}</h4>
-                    <button className="btn circle" onClick={handleShow}><i className="fa fa-trash fa-lg"> </i></button>
-                    <button className="btn circle"><i className="fa fa-edit fa-lg"> </i></button>
+                    <button className="btn circle" onClick={handleShow}>
+                        <i className="fa fa-edit fa-lg"> </i>
+                    </button>
+                    <button className="btn circle"
+                            onClick={(e) => deleteRecipeDispatch(e,recipe.id)}>
+                            <i className="fa fa-trash fa-lg"> </i>
+                    </button>
 
                 </div>
 
@@ -28,7 +38,6 @@ const RecipeSummary = ({recipe}) => {
                     })}
                     <h5>Directions:</h5> <br/>
                     <p>{recipe.description}</p>
-                    {/*<p>Author: {recipe.userFirstName} {recipe.userLastName}</p>*/}
                     <h5>Added:</h5>
                     <p>{moment(recipe.createdAt.toDate()).calendar()}</p>
                 </div>
@@ -37,7 +46,9 @@ const RecipeSummary = ({recipe}) => {
                     <Modal.Header closeButton>
                         <Modal.Title>Modal heading</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Body>
+                        <EditRecipe recipe={recipe}/>
+                    </Modal.Body>
                 </Modal>
             </div>
         )
@@ -51,5 +62,15 @@ const RecipeSummary = ({recipe}) => {
 
 };
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        deleteRecipeDispatch: (e, recipe) => {
+            dispatch(deleteRecipe(recipe))
+        }
+    }
+};
 
-export default RecipeSummary;
+
+
+
+export default connect(null, mapDispatchToProps)(RecipeSummary);

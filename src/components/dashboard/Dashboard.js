@@ -14,13 +14,12 @@ class Dashboard extends React.Component {
     };
 
     handleClick = (recipe, e) => {
-        console.log(recipe);
         this.setState({recipe: recipe});
     };
-    render() {
 
+
+    render() {
         const { recipes, auth } = this.props;
-        console.log(recipes);
 
         if (!auth.uid) return <Redirect to="/signin" />
         else {
@@ -49,6 +48,20 @@ const mapStateToProps = (state) => {
 };
 
 
-export default compose(connect(mapStateToProps), firestoreConnect([
-    {collection: 'recipes', orderBy: ['createdAt', 'desc']}
-]))(Dashboard);
+export default compose(connect(mapStateToProps),
+    firestoreConnect(props => {
+        if (!props.auth.uid) { console.log('no uid error'); return []}
+        else {
+            console.log(props.auth.uid);
+
+            return [
+            {
+                collection: 'recipes',
+                where: [
+                    ['userId', '==', props.auth.uid]
+                ],
+
+                orderBy: ['createdAt', 'desc']
+            }
+        ]}
+    }))(Dashboard);

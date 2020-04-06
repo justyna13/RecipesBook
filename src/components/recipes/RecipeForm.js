@@ -16,16 +16,20 @@ class RecipeForm extends React.Component {
                     <input
                         type="text"
                         id="name"
+                        required={true}
+                        defaultValue={this.props.recipe.name}
                         onChange={this.handleChange.bind(this, 'name')}/> <br/>
 
                     <label htmlFor="description">Description</label> <br/>
                     <textarea
                         id="description"
+                        required={true}
+                        defaultValue={this.props.recipe.description}
                         onChange={this.handleChange.bind(this, 'description')}/>  <br/>
 
                     <h5>Ingredients</h5> <br/>
                     {
-                        this.props.ingredients.map( (val, idx) => {
+                        this.props.recipe.ingredients.map( (val, idx) => {
                             let ingredId = `ingredient-${idx}`, amountId = `amount-${idx}`;
                             return (
                                 <div key={idx}>
@@ -36,6 +40,7 @@ class RecipeForm extends React.Component {
                                         data-id={idx}
                                         id={ingredId}
                                         className="name"
+                                        defaultValue={val.name}
                                         onChange={this.handleChange.bind(this, 'name')}
                                     />
                                     <br/>
@@ -46,6 +51,7 @@ class RecipeForm extends React.Component {
                                         name={amountId}
                                         id={amountId}
                                         className="amount"
+                                        defaultValue={val.amount}
                                         onChange={this.handleChange.bind(this, 'amount')}
                                     />
                                 </div>
@@ -61,6 +67,7 @@ class RecipeForm extends React.Component {
                         id="difficultyLevel"
                         max={5}
                         min={1}
+                        defaultValue={this.props.recipe.difficultyLevel}
                         onChange={this.handleChange.bind(this,"difficultyLevel" )}/> <br/>
 
                     <button>{this.props.title}</button>
