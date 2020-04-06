@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import moment from "moment";
 import Modal from 'react-bootstrap/Modal';
-import EditRecipe from "./EditRecipe";
 import {deleteRecipe} from "../../store/actions/recipesActions";
 import {connect} from "react-redux";
+import Recipe from "./Recipe";
 
 
-const RecipeSummary = ({recipe, deleteRecipeDispatch}) => {
+const RecipeSummary = ({recipe, deleteRecipeDispatch }) => {
 
     const [show, setShow] = useState(false);
 
@@ -44,18 +44,20 @@ const RecipeSummary = ({recipe, deleteRecipeDispatch}) => {
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Edit recipe</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <EditRecipe recipe={recipe}/>
+                        <Recipe recipe={recipe} />
                     </Modal.Body>
                 </Modal>
             </div>
         )
     } else {
         return (
-            <div className="recipe__summary card">
-                click one
+            <div className="recipe__summary ">
+                <div className="pick-recipe">
+                    Pick recipe from list above
+                </div>
             </div>
         )
     }

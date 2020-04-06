@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="521c4365-6788-43c5-93ca-2ac797c105c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/recipes/EditRecipe.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipes/AddRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recipes/AddRecipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/recipes/AddRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recipes/Recipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/recipes/EditRecipe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/recipes/RecipeDetails.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/recipes/RecipeForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recipes/RecipeForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/recipes/RecipeSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recipes/RecipeSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recipes/RecipesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recipes/RecipesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/recipesActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/recipesActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/recipesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/recipesReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/recipes.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/recipes.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/styles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/store/actions" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -49,17 +48,17 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/styles" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/src/actors" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/src/movies" />
       <recent name="$PROJECT_DIR$/src/views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/store/actions" />
+      <recent name="$PROJECT_DIR$/src/styles" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public/img" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -143,7 +142,7 @@
       <workItem from="1586159677686" duration="8287000" />
       <workItem from="1586178748174" duration="3984000" />
       <workItem from="1586194355559" duration="4750000" />
-      <workItem from="1586199861543" duration="1510000" />
+      <workItem from="1586199861543" duration="8517000" />
     </task>
     <task id="LOCAL-00001" summary="signIn &amp; signUp user added">
       <created>1585761765029</created>
@@ -173,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585950078487</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="recipe delete &amp; update enabled">
+      <created>1586202997486</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586202997486</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +190,8 @@
     <MESSAGE value="adding new recipe to database implemented" />
     <MESSAGE value="showing recipes list &amp; recipe detail implemented" />
     <MESSAGE value="recipe form component created" />
-    <option name="LAST_COMMIT_MESSAGE" value="recipe form component created" />
+    <MESSAGE value="recipe delete &amp; update enabled" />
+    <option name="LAST_COMMIT_MESSAGE" value="recipe delete &amp; update enabled" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="384" width="585" height="295" key="#SCSS_Lint" timestamp="1581949830669">
@@ -195,18 +202,22 @@
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state x="836" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1043@0.0.1920.1043" timestamp="1585599290976" />
+    <state x="683" y="327" width="547" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586203333566">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="683" y="327" width="547" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1043@0.0.1920.1043" timestamp="1586203333566" />
     <state x="714" y="191" width="480" height="662" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581949719679">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state x="714" y="191" width="480" height="662" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1043/1920.0.1920.1200@0.0.1920.1043" timestamp="1581949719679" />
-    <state x="693" y="271" width="528" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586197939701">
+    <state x="693" y="271" width="528" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586208152102">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
-    <state x="693" y="271" width="528" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1043@0.0.1920.1043" timestamp="1586197939701" />
-    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2" timestamp="1585950078370">
+    <state x="693" y="271" width="528" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1043@0.0.1920.1043" timestamp="1586208152102" />
+    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2" timestamp="1586202997208">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
-    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2/0.0.1920.1043@0.0.1920.1043" timestamp="1585950078370" />
+    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2/0.0.1920.1043@0.0.1920.1043" timestamp="1586202997208" />
     <state x="556" y="300" width="802" height="445" key="EditFileWatcherDialog" timestamp="1581949538647">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
@@ -216,30 +227,30 @@
     </state>
     <state x="739" y="281" width="428" height="484" key="FileChooserDialogImpl/0.0.1920.1043/1920.0.1920.1200@0.0.1920.1043" timestamp="1581949819966" />
     <state x="739" y="281" key="FileChooserDialogImpl/0.0.1920.1043@0.0.1920.1043" timestamp="1585729995878" />
-    <state width="941" height="232" key="GridCell.Tab.0.bottom" timestamp="1586202945022">
+    <state width="941" height="231" key="GridCell.Tab.0.bottom" timestamp="1586206809702">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state width="1257" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1043/1920.0.1280.1024@1920.0.1280.1024" timestamp="1582278372168" />
     <state width="1897" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1043/1920.0.1920.1200@0.0.1920.1043" timestamp="1581954114144" />
-    <state width="941" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1043@0.0.1920.1043" timestamp="1586202945022" />
-    <state width="941" height="232" key="GridCell.Tab.0.center" timestamp="1586202945022">
+    <state width="941" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1043@0.0.1920.1043" timestamp="1586206809702" />
+    <state width="941" height="231" key="GridCell.Tab.0.center" timestamp="1586206809701">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state width="1257" height="268" key="GridCell.Tab.0.center/0.0.1920.1043/1920.0.1280.1024@1920.0.1280.1024" timestamp="1582278372168" />
     <state width="1897" height="275" key="GridCell.Tab.0.center/0.0.1920.1043/1920.0.1920.1200@0.0.1920.1043" timestamp="1581954114144" />
-    <state width="941" height="232" key="GridCell.Tab.0.center/0.0.1920.1043@0.0.1920.1043" timestamp="1586202945022" />
-    <state width="941" height="232" key="GridCell.Tab.0.left" timestamp="1586202945021">
+    <state width="941" height="231" key="GridCell.Tab.0.center/0.0.1920.1043@0.0.1920.1043" timestamp="1586206809701" />
+    <state width="941" height="231" key="GridCell.Tab.0.left" timestamp="1586206809700">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state width="1257" height="268" key="GridCell.Tab.0.left/0.0.1920.1043/1920.0.1280.1024@1920.0.1280.1024" timestamp="1582278372168" />
     <state width="1897" height="275" key="GridCell.Tab.0.left/0.0.1920.1043/1920.0.1920.1200@0.0.1920.1043" timestamp="1581954114144" />
-    <state width="941" height="232" key="GridCell.Tab.0.left/0.0.1920.1043@0.0.1920.1043" timestamp="1586202945021" />
-    <state width="941" height="232" key="GridCell.Tab.0.right" timestamp="1586202945022">
+    <state width="941" height="231" key="GridCell.Tab.0.left/0.0.1920.1043@0.0.1920.1043" timestamp="1586206809700" />
+    <state width="941" height="231" key="GridCell.Tab.0.right" timestamp="1586206809702">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state width="1257" height="268" key="GridCell.Tab.0.right/0.0.1920.1043/1920.0.1280.1024@1920.0.1280.1024" timestamp="1582278372168" />
     <state width="1897" height="275" key="GridCell.Tab.0.right/0.0.1920.1043/1920.0.1920.1200@0.0.1920.1043" timestamp="1581954114144" />
-    <state width="941" height="232" key="GridCell.Tab.0.right/0.0.1920.1043@0.0.1920.1043" timestamp="1586202945022" />
+    <state width="941" height="231" key="GridCell.Tab.0.right/0.0.1920.1043@0.0.1920.1043" timestamp="1586206809702" />
     <state x="165" y="252" width="645" height="538" key="find.popup" timestamp="1586165301788">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>

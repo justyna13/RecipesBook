@@ -83,3 +83,38 @@
     color: #fff;
     padding: 20px 10px;
 }
+
+.pick-recipe {
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.recipe__form {
+
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.number {
+    background-color: #5fcf80;
+    color: #fff;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 25px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+}
+
+.ingredients {
+    display: inline-flex;
+    grid-template-columns: 50% 20%;
+    /*grid-column-gap: 10%;*/
+    width: 100%;
+}
+
+.ingredients input[type=number]{ width: 5rem; }

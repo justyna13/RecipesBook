@@ -7,7 +7,7 @@ import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/dashboard/Dashboard";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
-import AddRecipe from "./components/recipes/AddRecipe";
+import Recipe from "./components/recipes/Recipe";
 import './styles/navbar.css';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
                     <Route exact path={['/', '/recipe/:id']} component={Dashboard} />
                     <Route path='/signin' component={SignIn} />
                     <Route path='/signup' component={SignUp} />
-                    <Route path='/add' component={AddRecipe} />
+                    <Route path='/add' component={Recipe} />
                 </Switch>
             </div>
         </Router>
