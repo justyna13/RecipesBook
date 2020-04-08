@@ -16,6 +16,7 @@ class RecipeForm extends React.Component {
                         id="name"
                         required={true}
                         defaultValue={this.props.recipe.name}
+                        style={{padding: '5px'}}
                         onChange={this.handleChange.bind(this, 'name')}/> <br/>
 
                     <label htmlFor="description">Description</label> <br/>
@@ -35,7 +36,7 @@ class RecipeForm extends React.Component {
                                     <div key={idx} className="ingredients">
                                         <div>
 
-                                            <label htmlFor={ingredId}>Name</label>
+                                            <label htmlFor={ingredId}>Name</label> <br/>
                                             <input
                                                 type="text"
                                                 name={ingredId}

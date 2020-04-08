@@ -6,10 +6,10 @@ import {connect} from "react-redux";
 
 const SignedInLinks = (props) => {
     return (
-        <ul className="right">
+        <ul className="right navbar">
             <li><NavLink to='/add'>New Recipe</NavLink></li>
             <li><a onClick={props.signOut}>Log Out</a></li>
-            <li><NavLink to="/" className="btn btn-floating pink lighten-1">
+            <li><NavLink to={"/user/" + props.auth.uid} className="btn circle">
                 {props.profile.initials}
             </NavLink></li>
         </ul>

@@ -11,6 +11,7 @@ body {
     /*background-position: top right;*/
     background-color: #F46036;
     overflow-y: auto;
+    min-width: 400px;
 }
 
 

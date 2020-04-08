@@ -115,6 +115,19 @@
     grid-template-columns: 50% 20%;
     /*grid-column-gap: 10%;*/
     width: 100%;
+    overflow: auto;
 }
 
-.ingredients input[type=number]{ width: 5rem; }
+.ingredients input[type=text] {
+    max-width: 80%;
+}
+
+.recipe__form input[type=text], textarea {
+    max-width: 80%;
+}
+
+.recipe__form input[type=number] {
+    max-width: 40%;
+}
+
+.ingredients input[type=number]{ width: 5rem; max-width: 100% }

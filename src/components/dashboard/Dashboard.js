@@ -25,7 +25,7 @@ class Dashboard extends React.Component {
         else {
             return (
                 <div className="col-md-12">
-                    <div className="row">
+                    <div className="row pr-3 pl-3">
                         <div className="col-md-10 mr-auto ml-auto recipes__list mb-5">
                             <RecipesList recipes={recipes} handleClick={this.handleClick}/>
                         </div>
