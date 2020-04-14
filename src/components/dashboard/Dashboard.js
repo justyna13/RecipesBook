@@ -15,8 +15,6 @@ class Dashboard extends React.Component {
     };
 
     handleClick = (recipe, e) => {
-
-
         if (recipe === this.state.recipe) {
             this.setState({recipe: []});
             this.setState({recipeSelected: false});
@@ -24,16 +22,12 @@ class Dashboard extends React.Component {
             this.setState({recipe: recipe});
             this.setState({recipeSelected: true});
         }
-        //
-        // this.state.recipeSelected ?
-        //     this.setState({recipe: []})
-        // : this.setState({recipe: recipe});
     };
 
     render() {
         const { recipes, auth } = this.props;
 
-        if (!auth.uid) return <Redirect to="/signin" />
+        if (!auth.uid) return <Redirect to="/signin" />;
         else {
             return (
                 <div className="col-md-12">
@@ -64,9 +58,6 @@ export default compose(connect(mapStateToProps),
     firestoreConnect(props => {
         if (!props.auth.uid) { console.log('no uid error'); return []}
         else {
-            console.log(props.auth.uid);
-
-
             return [
             {
                 collection: 'recipes',

@@ -65,9 +65,7 @@
 }
 
 
-
-
-.recipe__summary--title {
+.recipe__summary-title {
     background-color: #084C61;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;

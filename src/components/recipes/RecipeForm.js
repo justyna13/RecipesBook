@@ -31,8 +31,6 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
       uploadTask.on('state_changed',
           (snapShot) => {
               setLoadingPhoto(true);
-              console.log(snapShot);
-              console.log('uploaded worked');
           }, (err) => {
           console.log(err);
           }, () => {
@@ -49,6 +47,7 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
 
     return (
         <div className="recipe__form">
+
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name</label> <br/>
                 <input
@@ -70,16 +69,14 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
                 <form>
                     <input
                         type="file"
-                        onChange={handleImageAsFile}
-                    />
+                        onChange={handleImageAsFile} />
                     <button
                         className="btn btn-blue"
                         disabled={loadingPhoto}
-                        onClick={handleFirebaseUpload} >Upload photo</button>
+                        onClick={handleFirebaseUpload}>Upload photo</button>
                 </form>
 
                 <hr/>
-
                 <br/>
                 {
                     recipe.ingredients.map( (val, idx) => {
@@ -89,7 +86,6 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
                                 <legend><span className="number">{idx + 1}</span> Ingredient</legend>
                                 <div className="ingredients">
                                     <div>
-
                                         <label htmlFor={ingredId}>Name</label> <br/>
                                         <input
                                             type="text"
@@ -99,8 +95,7 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
                                             className="name"
                                             defaultValue={val.name}
                                             min={0}
-                                            onChange={handleNewChange.bind(this, 'name')}
-                                        />
+                                            onChange={handleNewChange.bind(this, 'name')} />
                                     </div>
                                     <div>
                                         <label htmlFor={amountId}>Amount</label> <br/>
@@ -113,20 +108,19 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
                                             defaultValue={val.amount}
                                             min={0}
                                             maxLength={3}
-                                            onChange={handleNewChange.bind(this, 'amount')}
-                                        />
+                                            onChange={handleNewChange.bind(this, 'amount')} />
                                     </div>
-
                                 </div>
                                 <br/> <br/>
                             </div>
-
                         )
                     })
                 }
                 <br/>
-                <button className="btn btn-blue btn-small" onClick={addIngredient.bind(this)}>Add more </button> <br/> <br/>
+                <button className="btn btn-blue btn-small" onClick={addIngredient.bind(this)}>Add more </button>
+                <br/> <br/>
                 <hr/>
+
                 <label htmlFor="difficultyLevel">Difficulty level</label> <br/>
                 <input
                     type="number"
@@ -134,14 +128,16 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
                     max={5}
                     min={1}
                     value={recipe.difficultyLevel}
-                    onChange={handleNewChange.bind(this,"difficultyLevel" )}/> <br/> <br/>
+                    onChange={handleNewChange.bind(this,"difficultyLevel" )} />
+                <br/> <br/>
                 <hr/>
+
                 <label htmlFor="prepTime">Preparation time</label> <br/>
                 <input
                     type="time"
                     id="prepTime"
                     value={recipe.prepTime}
-                    onChange={handleNewChange.bind(this,"prepTime" )}/> <br/> <br/>
+                    onChange={handleNewChange.bind(this,"prepTime" )} /> <br/> <br/>
 
                 <button
                     disabled={loadingPhoto}
@@ -152,7 +148,6 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
             </form>
         </div>
     );
-
 };
 
 export default RecipeForm;
