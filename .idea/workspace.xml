@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="521c4365-6788-43c5-93ca-2ac797c105c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +143,7 @@
       <workItem from="1586872030306" duration="695000" />
       <workItem from="1586886105428" duration="1986000" />
       <workItem from="1586890861184" duration="4438000" />
-      <workItem from="1586895714448" duration="5475000" />
+      <workItem from="1586895714448" duration="6806000" />
     </task>
     <task id="LOCAL-00001" summary="signIn &amp; signUp user added">
       <created>1585761765029</created>
@@ -214,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586900588713</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary=" styled links">
+      <created>1586901491887</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1586901491887</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +238,8 @@
     <MESSAGE value="upload food's photo implemented" />
     <MESSAGE value="some style added" />
     <MESSAGE value="small refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="small refactor" />
+    <MESSAGE value=" styled links" />
+    <option name="LAST_COMMIT_MESSAGE" value=" styled links" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="384" width="585" height="295" key="#SCSS_Lint" timestamp="1581949830669">
@@ -253,10 +262,10 @@
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state x="693" y="271" width="528" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1043@0.0.1920.1043" timestamp="1586208152102" />
-    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2" timestamp="1586900588616">
+    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2" timestamp="1586901491815">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
-    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2/0.0.1920.1043@0.0.1920.1043" timestamp="1586900588616" />
+    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2/0.0.1920.1043@0.0.1920.1043" timestamp="1586901491815" />
     <state x="556" y="300" width="802" height="445" key="EditFileWatcherDialog" timestamp="1581949538647">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
