@@ -10,13 +10,25 @@ import RecipeSummary from "../recipes/RecipeSummary";
 
 class Dashboard extends React.Component {
     state = {
-        recipe: []
+        recipe: [],
+        recipeSelected: false,
     };
 
     handleClick = (recipe, e) => {
-        this.setState({recipe: recipe});
-    };
 
+
+        if (recipe === this.state.recipe) {
+            this.setState({recipe: []});
+            this.setState({recipeSelected: false});
+        } else {
+            this.setState({recipe: recipe});
+            this.setState({recipeSelected: true});
+        }
+        //
+        // this.state.recipeSelected ?
+        //     this.setState({recipe: []})
+        // : this.setState({recipe: recipe});
+    };
 
     render() {
         const { recipes, auth } = this.props;
@@ -31,7 +43,7 @@ class Dashboard extends React.Component {
                         </div>
 
                         <div className="col-md-9 m-auto recipe__summary">
-                            <RecipeSummary recipe={this.state.recipe} />
+                            <RecipeSummary recipe={this.state.recipe} recipeSelected={this.state.recipeSelected} />
                         </div>
                     </div>
                 </div>
@@ -53,6 +65,7 @@ export default compose(connect(mapStateToProps),
         if (!props.auth.uid) { console.log('no uid error'); return []}
         else {
             console.log(props.auth.uid);
+
 
             return [
             {

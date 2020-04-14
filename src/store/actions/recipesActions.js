@@ -26,6 +26,7 @@ export const updateRecipe = (prevRecipe, updatedRecipe, e) => {
             name: updatedRecipe.name,
             description: updatedRecipe.description,
             difficultyLevel: updatedRecipe.difficultyLevel,
+            prepTime: updatedRecipe.prepTime,
             imgUrl: updatedRecipe.imgUrl,
             ingredients: updatedRecipe.ingredients,
             createdAt: prevRecipe.createdAt,

@@ -16,7 +16,6 @@ class Recipe extends React.Component {
         }],
         prepTime: 0,
         imgUrl: '',
-        foodImgUrl: '',
         difficultyLevel: 1
     };
 
@@ -28,7 +27,6 @@ class Recipe extends React.Component {
                 ingredients: this.props.recipe.ingredients,
                 prepTime: this.props.recipe.prepTime,
                 imgUrl: this.props.recipe.imgUrl,
-                foodImgUrl: this.props.recipe.foodImgUrl,
                 difficultyLevel: this.props.recipe.difficultyLevel
             })
         }
@@ -63,6 +61,7 @@ class Recipe extends React.Component {
             this.props.addRecipe(this.state);
             this.props.history.push('/');
         }
+
     };
 
     addIngredient = (e) => {
@@ -92,7 +91,7 @@ class Recipe extends React.Component {
                 )
             } else {
                 return (
-                    <div className="card">
+                    <div className="recipe-add ">
                         <h3>Add new recipe</h3> <br/> <br/>
                         <RecipeForm
                             title="Add new recipe"

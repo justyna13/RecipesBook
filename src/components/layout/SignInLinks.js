@@ -8,7 +8,7 @@ const SignedInLinks = (props) => {
     return (
         <ul className="right navbar">
             <li><NavLink to='/add'>New Recipe</NavLink></li>
-            <li><a onClick={props.signOut}>Log Out</a></li>
+            <li><a onClick={props.signOut} href="/">Log Out</a></li>
             <li><NavLink to={"/user/" + props.auth.uid} className="btn circle">
                 {props.profile.initials}
             </NavLink></li>

@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import SignedInLinks from "./SignInLinks";
 import SignedOutLinks from "./SignOutLinks";
 import {Link} from "react-router-dom";
 import { connect } from 'react-redux';
+
 
 const Navbar = (props) => {
 
@@ -12,7 +13,7 @@ const Navbar = (props) => {
     return (
         <nav>
             <div className="nav__inner">
-                <Link className="nav__title" to="/">
+                <Link to='/home' className="nav__title">
                     <i className="fa fa-fire"> Recipes Book</i></Link>
                 <div>
                     {links}

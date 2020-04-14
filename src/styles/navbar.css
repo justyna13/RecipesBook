@@ -33,6 +33,14 @@
 }
 
 
-.navbar {
+.navbar a{
     color: #fff;
+    font-size: 1.2rem;
+}
+
+
+@media screen and (max-width: 480px){
+    .nav__inner ul {
+        display: grid;
+    }
 }

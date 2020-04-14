@@ -6,15 +6,21 @@ import {connect} from "react-redux";
 import Recipe from "./Recipe";
 
 
-const RecipeSummary = ({recipe, deleteRecipeDispatch }) => {
+const RecipeSummary = ({recipe, deleteRecipeDispatch, recipeSelected }) => {
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const popUpDelete = (e, recipeId) => {
+        // TODO:
+        // add alert to confirm delete
+        deleteRecipeDispatch(e, recipeId);
+    };
 
-    if (recipe.createdAt) {
+
+    if (recipeSelected) {
         return (
             <div className="recipe__summary">
 
@@ -24,14 +30,14 @@ const RecipeSummary = ({recipe, deleteRecipeDispatch }) => {
                         <i className="fa fa-edit fa-lg"> </i>
                     </button>
                     <button className="btn circle"
-                            onClick={(e) => deleteRecipeDispatch(e,recipe.id)}>
+                            onClick={(e) => popUpDelete(e,recipe.id)}>
                             <i className="fa fa-trash fa-lg"> </i>
                     </button>
 
                 </div>
 
                 <div className="recipes__list--details">
-                    <img src={recipe.imgUrl} alt="img photo" className="recipe-img"/>
+                    <img src={recipe.imgUrl} alt="recipe" className="recipe-img"/>
                     <div className="recipe-details-text">
                         <h5>Directions:</h5> <br/>
                         <p>{recipe.description}</p>
@@ -41,14 +47,14 @@ const RecipeSummary = ({recipe, deleteRecipeDispatch }) => {
                         {recipe.ingredients.map( (item, i) => {
                             return <li key={recipe.id + item.name + i}>{item.name}: {item.amount}</li>
                         })}
-
+                        <br/>
                         <h5>Prep time: {recipe.prepTime}</h5>
 
-                        <h5>Added: {moment(recipe.createdAt.toDate()).calendar()}</h5>
+
                     </div>
 
                 </div>
-
+                <h5 className="recipe-added-date">Added: {moment(recipe.createdAt.toDate()).calendar()}</h5>
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Edit recipe</Modal.Title>
@@ -63,7 +69,7 @@ const RecipeSummary = ({recipe, deleteRecipeDispatch }) => {
         return (
             <div className="recipe__summary ">
                 <div className="pick-recipe">
-                    Pick recipe from list above
+                    Pick recipe from the list above
                 </div>
             </div>
         )

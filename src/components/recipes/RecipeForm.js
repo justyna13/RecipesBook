@@ -21,10 +21,10 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
 
     const handleFirebaseUpload = e => {
       e.preventDefault();
-      console.log('start upload');
+      console.log('start upload', imageAsUrl);
 
       if (imageAsFile === '') {
-          console.error(`not an image, the image file si a ${typeof(imageAsFile)}`);
+          console.error(`not an image, the image file is a ${typeof(imageAsFile)}`);
       }
       const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile);
 
@@ -63,6 +63,7 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
                 <textarea
                     id="description"
                     required={true}
+                    cols={45}
                     defaultValue={recipe.description}
                     onChange={handleNewChange.bind(this, 'description')}/>  <br/> <br/>
 
@@ -72,7 +73,7 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
                         onChange={handleImageAsFile}
                     />
                     <button
-                        className="btn btn-success"
+                        className="btn btn-blue"
                         disabled={loadingPhoto}
                         onClick={handleFirebaseUpload} >Upload photo</button>
                 </form>
@@ -124,7 +125,7 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
                     })
                 }
                 <br/>
-                <button className="btn btn-success btn-small" onClick={addIngredient.bind(this)}>Add more </button> <br/> <br/>
+                <button className="btn btn-blue btn-small" onClick={addIngredient.bind(this)}>Add more </button> <br/> <br/>
                 <hr/>
                 <label htmlFor="difficultyLevel">Difficulty level</label> <br/>
                 <input
@@ -132,19 +133,19 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
                     id="difficultyLevel"
                     max={5}
                     min={1}
-                    defaultValue={recipe.difficultyLevel}
+                    value={recipe.difficultyLevel}
                     onChange={handleNewChange.bind(this,"difficultyLevel" )}/> <br/> <br/>
                 <hr/>
                 <label htmlFor="prepTime">Preparation time</label> <br/>
                 <input
                     type="time"
                     id="prepTime"
-                    defaultValue={recipe.prepTime}
+                    value={recipe.prepTime}
                     onChange={handleNewChange.bind(this,"prepTime" )}/> <br/> <br/>
 
                 <button
                     disabled={loadingPhoto}
-                    className="btn btn-success">{title}</button>
+                    className="btn btn-blue">{title}</button>
                 {loadingPhoto ?
                 <div>Uploading photo...</div>
                 : null}

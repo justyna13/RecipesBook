@@ -4,10 +4,6 @@ import {connect} from "react-redux";
 
 const UserProfile = ({auth, profile, ...props}) => {
 
-
-
-    const userId = props.match.params.id;
-
     return (
         <div className="card">
             <h2>Welcome {profile.firstName} {profile.lastName}!</h2>

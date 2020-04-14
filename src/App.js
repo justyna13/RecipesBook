@@ -9,7 +9,8 @@ import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import Recipe from "./components/recipes/Recipe";
 import './styles/navbar.css';
-import UserProfile from "./components/auth/UserProfile";
+import UserProfile from "./components/auth/UserProfile"
+
 
 function App() {
     return (
@@ -17,7 +18,7 @@ function App() {
             <div>
                 <Navbar />
                 <Switch>
-                    <Route exact path={['/', '/recipe/:id']} component={Dashboard} />
+                    <Route exact path={['/', '/home', '/recipe/:id']} component={Dashboard} />
                     <Route path='/signin' component={SignIn} />
                     <Route path='/signup' component={SignUp} />
                     <Route path='/add' component={Recipe} />
