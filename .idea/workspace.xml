@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="521c4365-6788-43c5-93ca-2ac797c105c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/SignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/SignUp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +144,7 @@
       <workItem from="1586872030306" duration="695000" />
       <workItem from="1586886105428" duration="1986000" />
       <workItem from="1586890861184" duration="4438000" />
-      <workItem from="1586895714448" duration="6806000" />
+      <workItem from="1586895714448" duration="7097000" />
     </task>
     <task id="LOCAL-00001" summary="signIn &amp; signUp user added">
       <created>1585761765029</created>
@@ -222,7 +223,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586901491887</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="updated README.md">
+      <created>1586903072061</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1586903072062</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updated README.md">
+      <created>1586903164319</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1586903164319</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +254,8 @@
     <MESSAGE value="some style added" />
     <MESSAGE value="small refactor" />
     <MESSAGE value=" styled links" />
-    <option name="LAST_COMMIT_MESSAGE" value=" styled links" />
+    <MESSAGE value="updated README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated README.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="384" width="585" height="295" key="#SCSS_Lint" timestamp="1581949830669">
@@ -262,10 +278,10 @@
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state x="693" y="271" width="528" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1043@0.0.1920.1043" timestamp="1586208152102" />
-    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2" timestamp="1586903071980">
+    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2" timestamp="1586903164237">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
-    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2/0.0.1920.1043@0.0.1920.1043" timestamp="1586903071980" />
+    <state x="85" y="118" width="799" height="806" key="CommitChangelistDialog2/0.0.1920.1043@0.0.1920.1043" timestamp="1586903164237" />
     <state x="556" y="300" width="802" height="445" key="EditFileWatcherDialog" timestamp="1581949538647">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>

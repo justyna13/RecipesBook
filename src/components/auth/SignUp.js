@@ -58,7 +58,7 @@ class SignUp extends React.Component {
                     </div>
 
                     <div className="input-field btn-submit col-md-6">
-                        <button className="btn btn-success">Sign up</button>
+                        <button className="btn btn-blue">Sign up</button>
                     </div>
 
                     <div className="red-text center">

@@ -44,7 +44,7 @@ class SignIn extends React.Component {
                     </div>
 
                     <div className="input-field btn-submit col-md-6">
-                        <button className="btn btn-success">Login</button>
+                        <button className="btn btn-blue">Login</button>
                     </div>
                     <div className="red-text">
                         { authError ? <p>{authError}</p>: null }
