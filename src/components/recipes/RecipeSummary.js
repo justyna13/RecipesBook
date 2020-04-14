@@ -31,15 +31,22 @@ const RecipeSummary = ({recipe, deleteRecipeDispatch }) => {
                 </div>
 
                 <div className="recipes__list--details">
-                    <h5>Ingredients:</h5> <br/>
+                    <img src={recipe.imgUrl} alt="img photo" className="recipe-img"/>
+                    <div className="recipe-details-text">
+                        <h5>Directions:</h5> <br/>
+                        <p>{recipe.description}</p>
 
-                    {recipe.ingredients.map( (item) => {
-                         return <li key={Date.now()+ item.name}>{item.name}: {item.amount}</li>
-                    })}
-                    <h5>Directions:</h5> <br/>
-                    <p>{recipe.description}</p>
-                    <h5>Added:</h5>
-                    <p>{moment(recipe.createdAt.toDate()).calendar()}</p>
+                        <h5>Ingredients:</h5> <br/>
+
+                        {recipe.ingredients.map( (item, i) => {
+                            return <li key={recipe.id + item.name + i}>{item.name}: {item.amount}</li>
+                        })}
+
+                        <h5>Prep time: {recipe.prepTime}</h5>
+
+                        <h5>Added: {moment(recipe.createdAt.toDate()).calendar()}</h5>
+                    </div>
+
                 </div>
 
                 <Modal show={show} onHide={handleClose}>

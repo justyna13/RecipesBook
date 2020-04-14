@@ -1,92 +1,157 @@
-import React from "react";
+import React, {useState} from "react";
+import { storage } from "../../config/firebaseConfig";
 
-class RecipeForm extends React.Component {
 
-    handleChange(field, e) {
-        this.props.handleChange(field, e);
-    }
 
-    render() {
-        return (
-            <div className="recipe__form">
-                <form onSubmit={this.props.handleSubmit}>
-                    <label htmlFor="name">Name</label> <br/>
+const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) => {
+
+    const allInputs = {imgUrl: ''};
+    const [loadingPhoto, setLoadingPhoto] = useState(false);
+    const [imageAsFile, setImageAsFile] = useState('');
+    const [imageAsUrl, setImageAsUrl] = useState(allInputs);
+
+    const handleNewChange = (field, e) => {
+        handleChange(field, e);
+    };
+
+    const handleImageAsFile = (e) => {
+        const image = e.target.files[0];
+        setImageAsFile(imageFile => (image));
+    };
+
+    const handleFirebaseUpload = e => {
+      e.preventDefault();
+      console.log('start upload');
+
+      if (imageAsFile === '') {
+          console.error(`not an image, the image file si a ${typeof(imageAsFile)}`);
+      }
+      const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile);
+
+      uploadTask.on('state_changed',
+          (snapShot) => {
+              setLoadingPhoto(true);
+              console.log(snapShot);
+              console.log('uploaded worked');
+          }, (err) => {
+          console.log(err);
+          }, () => {
+          storage.ref('images').child(imageAsFile.name).getDownloadURL()
+              .then(fireBaseUrl => {
+                  setImageAsUrl(prevObject => ({...prevObject, imgUrl: fireBaseUrl}));
+                  handleNewChange('imgUrl', fireBaseUrl);
+                  setLoadingPhoto(false);
+              })
+          });
+
+    };
+
+
+    return (
+        <div className="recipe__form">
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="name">Name</label> <br/>
+                <input
+                    type="text"
+                    id="name"
+                    required={true}
+                    defaultValue={recipe.name}
+                    style={{padding: '5px'}}
+                    onChange={handleNewChange.bind(this, 'name')}/> <br/>
+
+                <label htmlFor="description">Description</label> <br/>
+                <textarea
+                    id="description"
+                    required={true}
+                    defaultValue={recipe.description}
+                    onChange={handleNewChange.bind(this, 'description')}/>  <br/> <br/>
+
+                <form>
                     <input
-                        type="text"
-                        id="name"
-                        required={true}
-                        defaultValue={this.props.recipe.name}
-                        style={{padding: '5px'}}
-                        onChange={this.handleChange.bind(this, 'name')}/> <br/>
-
-                    <label htmlFor="description">Description</label> <br/>
-                    <textarea
-                        id="description"
-                        required={true}
-                        defaultValue={this.props.recipe.description}
-                        onChange={this.handleChange.bind(this, 'description')}/>  <br/>
-                    <hr/>
-                    <br/>
-                    {
-                        this.props.recipe.ingredients.map( (val, idx) => {
-                            let ingredId = `ingredient-${idx}`, amountId = `amount-${idx}`;
-                            return (
-                                <div>
-                                    <legend><span className="number">{idx + 1}</span> Ingredient</legend>
-                                    <div key={idx} className="ingredients">
-                                        <div>
-
-                                            <label htmlFor={ingredId}>Name</label> <br/>
-                                            <input
-                                                type="text"
-                                                name={ingredId}
-                                                data-id={idx}
-                                                id={ingredId}
-                                                className="name"
-                                                defaultValue={val.name}
-                                                min={0}
-                                                onChange={this.handleChange.bind(this, 'name')}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label htmlFor={amountId}>Amount</label> <br/>
-                                            <input
-                                                type="number"
-                                                data-id={idx}
-                                                name={amountId}
-                                                id={amountId}
-                                                className="amount"
-                                                defaultValue={val.amount}
-                                                min={0}
-                                                maxLength={3}
-                                                onChange={this.handleChange.bind(this, 'amount')}
-                                            />
-                                        </div>
-
-                                    </div>
-                                    <br/> <br/>
-                                </div>
-
-                            )
-                        })
-                    }
-                    <br/>
-                    <button className="btn btn-success btn-small" onClick={this.props.addIngredient.bind(this)}>Add more </button> <br/> <br/>
-                    <hr/>
-                    <label htmlFor="difficultyLevel">Difficulty level</label> <br/>
-                    <input
-                        type="number"
-                        id="difficultyLevel"
-                        max={5}
-                        min={1}
-                        defaultValue={this.props.recipe.difficultyLevel}
-                        onChange={this.handleChange.bind(this,"difficultyLevel" )}/> <br/> <br/>
-
-                    <button className="btn btn-success">{this.props.title}</button>
+                        type="file"
+                        onChange={handleImageAsFile}
+                    />
+                    <button
+                        className="btn btn-success"
+                        disabled={loadingPhoto}
+                        onClick={handleFirebaseUpload} >Upload photo</button>
                 </form>
-            </div>
-        );
-    }
-}
+
+                <hr/>
+
+                <br/>
+                {
+                    recipe.ingredients.map( (val, idx) => {
+                        let ingredId = `ingredient-${idx}`, amountId = `amount-${idx}`;
+                        return (
+                            <div key={idx}>
+                                <legend><span className="number">{idx + 1}</span> Ingredient</legend>
+                                <div className="ingredients">
+                                    <div>
+
+                                        <label htmlFor={ingredId}>Name</label> <br/>
+                                        <input
+                                            type="text"
+                                            name={ingredId}
+                                            data-id={idx}
+                                            id={ingredId}
+                                            className="name"
+                                            defaultValue={val.name}
+                                            min={0}
+                                            onChange={handleNewChange.bind(this, 'name')}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor={amountId}>Amount</label> <br/>
+                                        <input
+                                            type="number"
+                                            data-id={idx}
+                                            name={amountId}
+                                            id={amountId}
+                                            className="amount"
+                                            defaultValue={val.amount}
+                                            min={0}
+                                            maxLength={3}
+                                            onChange={handleNewChange.bind(this, 'amount')}
+                                        />
+                                    </div>
+
+                                </div>
+                                <br/> <br/>
+                            </div>
+
+                        )
+                    })
+                }
+                <br/>
+                <button className="btn btn-success btn-small" onClick={addIngredient.bind(this)}>Add more </button> <br/> <br/>
+                <hr/>
+                <label htmlFor="difficultyLevel">Difficulty level</label> <br/>
+                <input
+                    type="number"
+                    id="difficultyLevel"
+                    max={5}
+                    min={1}
+                    defaultValue={recipe.difficultyLevel}
+                    onChange={handleNewChange.bind(this,"difficultyLevel" )}/> <br/> <br/>
+                <hr/>
+                <label htmlFor="prepTime">Preparation time</label> <br/>
+                <input
+                    type="time"
+                    id="prepTime"
+                    defaultValue={recipe.prepTime}
+                    onChange={handleNewChange.bind(this,"prepTime" )}/> <br/> <br/>
+
+                <button
+                    disabled={loadingPhoto}
+                    className="btn btn-success">{title}</button>
+                {loadingPhoto ?
+                <div>Uploading photo...</div>
+                : null}
+            </form>
+        </div>
+    );
+
+};
 
 export default RecipeForm;

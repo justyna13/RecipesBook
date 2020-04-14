@@ -14,6 +14,9 @@ class Recipe extends React.Component {
             name: '',
             amount: 0
         }],
+        prepTime: 0,
+        imgUrl: '',
+        foodImgUrl: '',
         difficultyLevel: 1
     };
 
@@ -23,6 +26,9 @@ class Recipe extends React.Component {
                 name: this.props.recipe.name,
                 description: this.props.recipe.description,
                 ingredients: this.props.recipe.ingredients,
+                prepTime: this.props.recipe.prepTime,
+                imgUrl: this.props.recipe.imgUrl,
+                foodImgUrl: this.props.recipe.foodImgUrl,
                 difficultyLevel: this.props.recipe.difficultyLevel
             })
         }
@@ -30,14 +36,21 @@ class Recipe extends React.Component {
     }
 
     handleChange(field, e) {
-        if (['name', 'amount'].includes(e.target.className)) {
-            let ingredients = [...this.state.ingredients];
-            ingredients[e.target.dataset.id][e.target.className] = e.target.value;
-            this.setState({ingredients}, () => console.log(this.state.ingredients));
+
+        if(field === 'imgUrl') {
+
+            this.setState({imgUrl: e})
+            console.log('img', this.state.imgUrl);
         } else {
-            this.setState({
-                [field]: e.target.value
-            })
+            if (['name', 'amount'].includes(e.target.className)) {
+                let ingredients = [...this.state.ingredients];
+                ingredients[e.target.dataset.id][e.target.className] = e.target.value;
+                this.setState({ingredients}, () => console.log(this.state.ingredients));
+            }  else {
+                this.setState({
+                    [field]: e.target.value
+                })
+            }
         }
     };
 

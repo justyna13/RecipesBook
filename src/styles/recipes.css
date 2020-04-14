@@ -82,6 +82,9 @@
     background-color: #481D24;
     color: #fff;
     padding: 20px 10px;
+    display: grid;
+    justify-content: center;
+    width: 100%;
 }
 
 .pick-recipe {
@@ -131,3 +134,17 @@
 }
 
 .ingredients input[type=number]{ width: 5rem; max-width: 100% }
+
+.recipe-img{
+    width: auto;
+    max-width: 95%;
+    margin: auto;
+    max-height: 35vh;
+    overflow-y: hidden;
+
+}
+
+.recipe-details-text {
+    padding: 10px 30px;
+}
+
