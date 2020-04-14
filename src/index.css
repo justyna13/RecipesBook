@@ -38,7 +38,7 @@ input[type=password],
 input[type=text],
 input[type=file] {
     border-radius: 5%;
-    padding: 1%;
+
 }
 
 .btn-submit {
