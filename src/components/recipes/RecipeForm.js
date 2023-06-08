@@ -16,6 +16,7 @@ const RecipeForm = ({handleChange, handleSubmit, addIngredient, recipe, title}) 
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
     setImageAsFile(imageFile => (image));
+    console.log(imageAsUrl)
   };
 
   const handleFirebaseUpload = e => {
