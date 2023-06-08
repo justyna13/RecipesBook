@@ -1,14 +1,17 @@
+import { AuthStates } from "../../consts/authStates";
+
 export const  signIn = (credentials) => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
+        dispatch({type: AuthStates.LOGIN_REQUEST});
 
         firebase.auth().signInWithEmailAndPassword(
             credentials.email,
             credentials.password
         ).then(() => {
-            dispatch({type: 'LOGIN_SUCCESS'});
+            dispatch({type: AuthStates.LOGIN_SUCCESS});
         }).catch( (error) => {
-            dispatch({type: 'LOGIN_ERROR', error});
+            dispatch({type: AuthStates.LOGIN_ERROR, error});
         });
     }
 };
@@ -18,7 +21,7 @@ export const signOut = () => {
         const firebase = getFirebase();
 
         firebase.auth().signOut().then( () => {
-            dispatch({ type: 'SIGNOUT_SUCCESS'})
+            dispatch({ type: AuthStates.SIGNOUT_SUCCESS})
         })
     }
 };
@@ -38,9 +41,9 @@ export const signUp = (newUser) => {
                 initials: newUser.firstName[0] + newUser.lastName[0],
             });
         }).then( () => {
-            dispatch({type: "SIGNUP_SUCCESS"})
+            dispatch({type: AuthStates.SIGNUP_SUCCESS})
         }).catch( (error) => {
-            dispatch({type: 'SIGNUP_ERROR', error});
+            dispatch({type: AuthStates.SIGNUP_ERROR, error});
         })
     }
 };

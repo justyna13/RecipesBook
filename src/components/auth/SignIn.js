@@ -34,13 +34,26 @@ class SignIn extends React.Component {
                     </h5>
                     <br/>
                     <div className="form-group col-md-6">
-                        <label htmlFor="email">Email</label> <br/>
-                        <input type="email" id="email" onChange={this.handleChange} />
+                        <input
+                          id="email"
+                          type="text"
+                          value={this.state.email}
+                          required
+                          onChange={this.handleChange} />
+                        <span className="highlight"></span>
+                        <span className="bar"></span>
+                        <label>Email</label>
                     </div>
-
                     <div className="form-group col-md-6">
-                        <label htmlFor="password">Password</label> <br/>
-                        <input type="password" id="password" onChange={this.handleChange} />
+                        <input
+                          id="password"
+                          type="password"
+                          value={this.state.password}
+                          required
+                          onChange={this.handleChange} />
+                        <span className="highlight"></span>
+                        <span className="bar"></span>
+                        <label>Password</label>
                     </div>
 
                     <div className="input-field btn-submit col-md-6">

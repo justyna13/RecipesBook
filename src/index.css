@@ -13,10 +13,6 @@ body {
     overflow-y: auto;
     min-width: 400px;
 }
-
-
-
-
 .card {
     background-color: #fff;
     padding: 30px;
@@ -33,18 +29,6 @@ body {
     font-weight: bold;
 }
 
-input[type=email] ,
-input[type=password],
-input[type=text],
-input[type=file] {
-    border-radius: 5%;
-
-}
-
 .btn-submit {
     float: right;
-}
-
-label {
-    padding-top: 1%;
 }

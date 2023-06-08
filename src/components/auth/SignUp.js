@@ -37,24 +37,52 @@ class SignUp extends React.Component {
                         Sign Up
                     </h5>
                     <br/>
-                    <div className="input-field">
-                        <label htmlFor="firstName">First Name</label> <br/>
-                        <input type="text" id="firstName" onChange={this.handleChange} />
+                    <div className="form-group col-md-6">
+                        <input
+                          id="firstName"
+                          type="text"
+                          value={this.state.firstName}
+                          required
+                          onChange={this.handleChange} />
+                        <span className="highlight"></span>
+                        <span className="bar"></span>
+                        <label htmlFor="firstName">First Name</label>
                     </div>
 
-                    <div className="input-field">
-                        <label htmlFor="lastName">Last Name</label> <br/>
-                        <input type="text" id="lastName" onChange={this.handleChange} />
+                    <div className="form-group col-md-6">
+                        <input
+                          id="lastName"
+                          type="text"
+                          value={this.state.lastName}
+                          required
+                          onChange={this.handleChange} />
+                        <span className="highlight"></span>
+                        <span className="bar"></span>
+                        <label htmlFor="lastName">Last Name</label>
                     </div>
 
-                    <div className="input-field">
-                        <label htmlFor="email">Email</label> <br/>
-                        <input type="email" id="email" onChange={this.handleChange} />
+                    <div className="form-group col-md-6">
+                        <input
+                          id="email"
+                          type="text"
+                          value={this.state.email}
+                          required
+                          onChange={this.handleChange} />
+                        <span className="highlight"></span>
+                        <span className="bar"></span>
+                        <label htmlFor="email">E-mail</label>
                     </div>
 
-                    <div className="input-field">
-                        <label htmlFor="password">Password</label> <br/>
-                        <input type="password" id="password" onChange={this.handleChange} />
+                    <div className="form-group col-md-6">
+                        <input
+                          id="password"
+                          type="password"
+                          value={this.state.password}
+                          required
+                          onChange={this.handleChange} />
+                        <span className="highlight"></span>
+                        <span className="bar"></span>
+                        <label htmlFor="password">Password</label>
                     </div>
 
                     <div className="input-field btn-submit col-md-6">

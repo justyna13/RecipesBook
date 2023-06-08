@@ -8,7 +8,8 @@ import Dashboard from "./components/dashboard/Dashboard";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import Recipe from "./components/recipes/Recipe";
-import './styles/navbar.css';
+import "./styles/navbar.css";
+import "./styles/forms.css";
 import UserProfile from "./components/auth/UserProfile"
 
 

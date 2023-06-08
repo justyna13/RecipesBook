@@ -1,3 +1,5 @@
+import { AuthStates } from "../../consts/authStates";
+
 const initialState = {
     authError: null
 };
@@ -5,27 +7,30 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'LOGIN_ERROR':
+        case AuthStates.LOGIN_REQUEST:
+            return {
+                ...state,
+                authError: null,
+            }
+        case AuthStates.LOGIN_ERROR:
             return {
                 ...state,
                 authError: 'Login failed'
             };
-        case 'LOGIN_SUCCESS':
-            console.log('success');
+        case AuthStates.LOGIN_SUCCESS:
             return {
                 ...state,
                 authError: null
             };
-        case 'SIGNOUT_SUCCESS':
+        case AuthStates.SIGNOUT_SUCCESS:
             return state;
 
-        case 'SIGNUP_SUCCESS':
-            console.log('success');
+        case AuthStates.SIGNUP_SUCCESS:
             return {
                 ...state,
                 authError: null
             };
-        case 'SIGNUP_ERROR':
+        case AuthStates.SIGNUP_ERROR:
             return {
                 ...state,
                 authError: action.error.message
