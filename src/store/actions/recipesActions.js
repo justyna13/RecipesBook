@@ -6,8 +6,8 @@ export const addRecipe = (recipe) => {
 
         firestore.collection('recipes').add({
             ...recipe,
-            userFirstName: profile.firstName,
-            userLastName: profile.lastName,
+            userFirstName: profile.firstName ?? "",
+            userLastName: profile.lastName ?? "",
             userId: userId,
             createdAt: new Date()
         }).then( () => {
