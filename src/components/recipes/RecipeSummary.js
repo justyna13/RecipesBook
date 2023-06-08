@@ -7,7 +7,6 @@ import Recipe from "./Recipe";
 
 
 const RecipeSummary = ({recipe, deleteRecipeDispatch, recipeSelected, handleStateChange }) => {
-
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);

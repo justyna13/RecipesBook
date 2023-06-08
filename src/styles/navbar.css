@@ -30,8 +30,17 @@
 .circle {
     border-radius: 50%;
     background-color: lightskyblue;
+    height: 44px;
+    width: 44px;
+    display: inline-block;
 }
-
+.circle i {
+    line-height: 20px;
+    margin: auto;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+}
 
 .navbar a{
     color: #fff;

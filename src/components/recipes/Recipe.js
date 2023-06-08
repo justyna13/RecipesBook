@@ -36,7 +36,6 @@ class Recipe extends React.Component {
     handleChange(field, e) {
 
         if(field === 'imgUrl') {
-
             this.setState({imgUrl: e})
             console.log('img', this.state.imgUrl);
         } else {
