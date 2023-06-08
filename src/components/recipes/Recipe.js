@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import {addRecipe, updateRecipe} from "../../store/actions/recipesActions";
+import { addRecipe, updateRecipe } from "../../store/actions/recipesActions";
 import {connect} from "react-redux";
 import RecipeForm from "./RecipeForm";
 
@@ -56,6 +56,7 @@ class Recipe extends React.Component {
         e.preventDefault();
         if (this.props.recipe) {
             this.props.updateRecipe(e, this.props.recipe, this.state);
+            this.props.handleUpdated(this.props.recipe)
         }
         else {
             this.props.addRecipe(this.state);

@@ -6,8 +6,8 @@ import {signIn} from "../../store/actions/authActions";
 
 class SignIn extends React.Component {
     state = {
-        email: '',
-        password: ''
+        email: 'test-user@gmail.com',
+        password: 'password123'
     };
 
     handleChange = (e) => {

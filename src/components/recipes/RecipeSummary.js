@@ -59,7 +59,7 @@ const RecipeSummary = ({recipe, deleteRecipeDispatch, recipeSelected }) => {
                         <Modal.Title>Edit recipe</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Recipe recipe={recipe} />
+                        <Recipe recipe={recipe} handleUpdated={handleClose} />
                     </Modal.Body>
                 </Modal>
             </div>

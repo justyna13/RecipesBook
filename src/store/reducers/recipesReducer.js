@@ -23,6 +23,9 @@ const recipeReducer = (state = initialState, action) => {
         case 'DELETE_RECIPE_ERROR':
             console.log(action.error);
             return state;
+        case 'UPDATE_RECIPES_LIST':
+            console.log(state)
+            return state;
         default:
             return state;
     }
