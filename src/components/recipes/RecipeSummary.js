@@ -6,18 +6,26 @@ import {connect} from "react-redux";
 import Recipe from "./Recipe";
 
 
-const RecipeSummary = ({recipe, deleteRecipeDispatch, recipeSelected }) => {
+const RecipeSummary = ({recipe, deleteRecipeDispatch, recipeSelected, handleStateChange }) => {
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const handleUpdate = () => {
+        handleClose();
+        handleStateChange();
+    }
+
     const popUpDelete = (e, recipeId) => {
         // TODO:
         // add alert to confirm delete
         deleteRecipeDispatch(e, recipeId);
+        handleUpdate();
     };
+
+
 
 
     if (recipeSelected) {
@@ -59,7 +67,7 @@ const RecipeSummary = ({recipe, deleteRecipeDispatch, recipeSelected }) => {
                         <Modal.Title>Edit recipe</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Recipe recipe={recipe} handleUpdated={handleClose} />
+                        <Recipe recipe={recipe} handleUpdated={handleUpdate} />
                     </Modal.Body>
                 </Modal>
             </div>

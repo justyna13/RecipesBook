@@ -24,6 +24,12 @@ class Dashboard extends React.Component {
         }
     };
 
+    resetSelectedRecipe = () => {
+        this.setState({recipe: []});
+        this.setState({recipeSelected: false});
+        this.props.history.push('/home');
+    }
+
     render() {
         const { recipes, auth } = this.props;
 
@@ -37,7 +43,7 @@ class Dashboard extends React.Component {
                         </div>
 
                         <div className="col-md-9 m-auto recipe__summary">
-                            <RecipeSummary recipe={this.state.recipe} recipeSelected={this.state.recipeSelected} />
+                            <RecipeSummary recipe={this.state.recipe} recipeSelected={this.state.recipeSelected} handleStateChange={this.resetSelectedRecipe} />
                         </div>
                     </div>
                 </div>
